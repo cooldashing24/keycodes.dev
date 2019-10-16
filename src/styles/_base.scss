@@ -1,0 +1,26 @@
+/*
+    Base styles, utilities, and helpers
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Saira:400,700&display=swap');
+
+$font: 'Saira', sans-serif;
+$font-bold: 700;
+$font-base: 400;
+$yellow: #FFB928;
+$black: #161616;
+$white: #FCFCFC;
+$xl: 3.375rem;
+$lg: 2.25rem;
+$md: 1.5rem;
+$sm: 1rem;
+$xs: .667rem;
+
+body {
+    font-family: $font;
+    font-weight: $font-base;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    font-weight: $font-bold;
+}
