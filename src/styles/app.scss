@@ -1,0 +1,23 @@
+@import "reset";
+@import "utils";
+
+.layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
+    @media (max-width: 600px) {
+        display: block;
+    }
+}
+
+.layout--about {
+    order: 2;
+    background: $yellow;
+    padding: $md;
+}
+
+.layout--keys {
+    order: 1;
+    background:$black;
+    padding: $md;
+}

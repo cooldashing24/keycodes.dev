@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
+import "../styles/app.scss"
+import About from "./about"
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <h1>Hello World!</h1>
-      <main>
-        {children}
-      </main>
+    <div className="layout">
+      <About />
+      {children}
     </div>
   )
 }
