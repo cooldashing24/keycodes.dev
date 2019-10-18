@@ -1,14 +1,42 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <div className="layout--keys">
-      <p>You are on the index page.</p>
+const KeyBlock = ({ title, value }) => {
+  return (
+    <div className="keys__info">
+      <h3>{title}:</h3>
+      <p>{value ? value : "Please press any key"}</p>
     </div>
-  </Layout>
-)
+  )
+}
+
+const IndexPage = () => {
+  const [key, setKey] = useState({ value: null, code: null })
+
+  const handleKey = (e) => {
+    setKey({ value: e.key, code: e.keyCode })
+  }
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKey);
+  }, []);
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <div className="keys">
+        <KeyBlock
+          title="Key Value"
+          value={key.value}
+        />
+        <KeyBlock
+          title="Key Code"
+          value={key.code}
+        />
+      </div>
+    </Layout>
+  )
+}
 
 export default IndexPage
